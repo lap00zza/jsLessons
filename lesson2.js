@@ -34,3 +34,6 @@ the function call expression itself:
 // Remember a term called Operator Precedence
 
 // [ [a] = [ [b] * [2] * [ [foo]( [ [c] * [3] ] ) ] ] ];
+
+// Consider => a = b * 2 + foo(c * 3)
+// In this case b * 2 will happen first (moving from left to right) and then foo(c * 3) is added.
