@@ -31,3 +31,6 @@ function koo(bar) {
 var q = 8;
 var f = koo(7);
 console.log(q, f);
+
+// results in reference error since bar in only defined in the scope of function 'koo'
+// console.log(bar);
