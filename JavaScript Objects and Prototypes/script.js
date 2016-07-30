@@ -52,11 +52,12 @@ class Dog {
         this.name = name;
         this.color = color;
     }
-    
-    speak() {
+
+    static speak() {
         display("Woof! Woof!");
     }
 }
-display(Dog);
+
 var dog = new Dog("Boom", "Black");
-dog.speak();
+display(dog);
+Dog.speak();
