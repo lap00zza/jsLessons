@@ -40,9 +40,23 @@ var hello = Object.create(Cat, {
     },
     color: {
         value: "Blond",
-        // writable: true
+        // writable: true,
         enumerable: true
         // configurable: true
     }
 });
 display(hello);
+
+class Dog {
+    constructor (name, color) {
+        this.name = name;
+        this.color = color;
+    }
+    
+    speak() {
+        display("Woof! Woof!");
+    }
+}
+display(Dog);
+var dog = new Dog("Boom", "Black");
+dog.speak();
