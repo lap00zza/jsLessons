@@ -4,13 +4,13 @@
 
 function displayValue(value, addMargin, addPadding) {
     "use strict";
-    var div = document.createElement('div');
-    div.style.fontSize = '32px';
+    var div = document.createElement("div");
+    div.style.fontSize = "32px";
     if (addMargin) {
-        div.style.marginBottom = '30px';
+        div.style.marginBottom = "30px";
     }
     if (addPadding) {
-        div.style.paddingLeft = '30px';
+        div.style.paddingLeft = "30px";
     }
     div.textContent = value;
     document.body.appendChild(div);
@@ -27,7 +27,7 @@ function get_type(thing) {
     if (thing === null) {
         return "[object Null]";
     } // special case
-    window.console.log(thing.constructor.name);
+    // window.console.log(thing.constructor.name);
     // return Object.prototype.toString.call(thing);
     return thing.constructor.name;
 }
@@ -36,22 +36,22 @@ function displayObject(object) {
     "use strict";
     var propertyName;
     if (object === null) {
-        displayValue('null');
+        displayValue("null");
     }
-    displayValue(get_type(object) + ' {');
+    displayValue(get_type(object) + " {");
     for (propertyName in object) {
-        if (propertyName !== 'constructor') {
-            displayValue(propertyName + ': ' + object[propertyName], false, true);
+        if (propertyName !== "constructor") {
+            displayValue(propertyName + ": " + object[propertyName], false, true);
         }
     }
-    displayValue('}', true);
+    displayValue("}", true);
 }
 
 function display() {
     "use strict";
     var i;
     for (i = 0; i < arguments.length; i += 1) {
-        if (typeof arguments[i] === 'object') {
+        if (typeof arguments[i] === "object") {
             displayObject(arguments[i]);
         } else {
             displayValue(arguments[i], true);
