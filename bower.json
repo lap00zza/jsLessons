@@ -1,0 +1,11 @@
+{
+  "name": "learningJS",
+  "version": "0.0.1",
+  "dependencies": {
+    "jquery": "latest",
+    "semantic-ui": "latest",
+    "angular": "1.5.8",
+    "moment": "latest"
+  },
+  "private": true
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Asynchronous Execution Pattern</title>
+</head>
+<body>
+<h2>Index</h2>
+<ul id="resultsBind">
+
+</ul>
+<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<!-- data-main attribute tells require.js to load
+             scripts/main.js after require.js loads. -->
+<!--<script data-main="scripts/main" src="scripts/require.js"></script>-->
+<script src="scripts/require.js"></script>
+<script>
+    /*
+    *  $ and jQuery are the same objects. $ is the alias for jQuery
+    *  The following code breaks the processing of large code so that
+    *  the UI does not appear unresponsive while processing. This is
+    *  mainly used for low power devices.
+    * */
+    "use strict";
+    jQuery(document).ready(function () {
+        console.log("I am ready");
+        var buffer = function (items, iteratorFunction, callback) {
+            var i = 0,
+                length = items.length,
+                result;
+
+            setTimeout(function iterator() {
+                for (var start = +new Date; i < length && +new Date - start < 50; i++){
+                    result = iteratorFunction.call(iteratorFunction[i], items[i], i);
+                }
+                if (i < length && result !== false){
+                    console.log("Recursive method used");
+                    setTimeout(iterator(), 20);
+                } else {
+                    callback(items);
+                }
+            }, 20);
+        };
+        jQuery.get('http://127.0.0.1:3000/', function (data, status, response) {
+            // console.log(data, status, response);
+            var html = "";
+            if (response.status === 200){
+                /*for (var i = 0; i < data.length; i ++){
+                    jQuery("#resultsBind").append("<li>" + data[i] +"</li>")
+                }*/
+                buffer(
+                        data, 
+                        function (item) {
+                            html += "<li>" + item + "</li>"
+                        },
+                        function () {
+                            jQuery("#resultsBind").append(html);
+                        }
+                )
+            }
+        });
+    });
+</script>
+</body>
+</html>

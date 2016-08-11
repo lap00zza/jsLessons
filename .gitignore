@@ -1,2 +1,3 @@
 # We should ignore the .idea directory
 .idea/
+bower_components/

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngLocale">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Twitter Loader</title>
+    <link rel="stylesheet" href="../bower_components/semantic-ui/dist/semantic.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ui left vertical visible sidebar labeled icon menu">
+        <a class="item">
+            <i class="github icon"></i>
+            Github
+        </a>
+        <a class="item">
+            <i class="video camera icon"></i>
+            Channels
+        </a>
+        <a class="item">
+            <i class="video play icon"></i>
+            Videos
+        </a>
+    </div>
+    <div class="ui grid container">
+        <!--<input type="text" ng-bind="githubUserName" title="Angular in action">-->
+        <div class="row">
+            <div class="ui action input">
+                <input type="text" title="Username" class="githubUserName" ng-model="githubUserName">
+                <button class="tweets_load ui labeled icon button">
+                    <i class="github icon"></i>
+                    Github profile
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="twitter-loader">
+                <div class="ui card segment">
+                    <div class="blurring dimmable image">
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <div class="ui inverted button">Add Friend</div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="" class="profile-image">
+                    </div>
+                    <div class="content">
+                        <a class="header"></a>
+                        <div class="meta">
+                            <span class="date"></span>
+                        </div>
+                        <div class="description">
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <a>
+                            <i class="user icon"></i>
+                            <span class="followers"></span>
+                        </a>
+                    </div>
+
+                    <div class="ui dimmer githubFetching">
+                        <div class="ui text loader">Loading</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="angular-test">
+                {{ 2 + 2 }}
+            </div>
+        </div>
+
+    </div>
+</body>
+<!--<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+<script src="../bower_components/semantic-ui/dist/semantic.min.js"></script>-->
+<script data-main="scripts/main" src="scripts/require.js"></script>
+</html>
