@@ -20,6 +20,9 @@
     *  The following code breaks the processing of large code so that
     *  the UI does not appear unresponsive while processing. This is
     *  mainly used for low power devices.
+    *
+    *  setInterval => Loop a function after each delay period
+    *  setTimeout => Execute a function once after delay period
     * */
     "use strict";
     jQuery(document).ready(function () {
@@ -31,7 +34,7 @@
 
             setTimeout(function iterator() {
                 for (var start = +new Date; i < length && +new Date - start < 50; i++){
-                    result = iteratorFunction.call(iteratorFunction[i], items[i], i);
+                    result = iteratorFunction.call(this, items[i]);
                 }
                 if (i < length && result !== false){
                     console.log("Recursive method used");

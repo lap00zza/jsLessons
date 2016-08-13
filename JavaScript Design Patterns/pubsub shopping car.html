@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="../bower_components/semantic-ui/dist/semantic.min.css">
+    <link rel="stylesheet" href="style_cart.css">
+</head>
+<body>
+
+<div class="ui top fixed menu">
+    <div class="header item">
+        Lapoozza's Corner
+    </div>
+    <div class="right menu">
+        <a class="item">
+            <i class="heart icon"></i>
+            Features
+        </a>
+        <a class="item" id="un-subscribe">
+            <i class="heartbeat icon"></i>
+            Un-subscribe
+        </a>
+        <a class="item">
+            <i class="opencart icon"></i>
+            Shopping Cart
+            <div class="ui red label mini-shopping-cart-items">0</div>
+        </a>
+    </div>
+</div>
+<div class="ui grid container mainWrapper">
+    <div class="column four wide leftCol">
+        <div class="ui three statistics">
+            <div class="statistic">
+                <div class="value">
+                    <i class="opencart icon"></i>
+                    <span class="big-shopping-cart-items">0</span>
+                </div>
+                <div class="label">
+                    Items
+                </div>
+            </div>
+        </div>
+        <div class="shoppingList">
+            <ul>
+
+            </ul>
+        </div>
+    </div>
+    <div class="column twelve wide rightCol">
+        <h3>Book's List</h3>
+        <div class="ui items shopItems">
+            <div class="item">
+                <a class="ui image">
+                    <i class="plus large icon"></i>
+                </a>
+                <div class="content">
+                    <a class="header">Common Object Patterns</a>
+                    <div class="description">
+                        <p>Javascript design patterns.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <a class="ui image">
+                    <i class="plus large icon"></i>
+                </a>
+                <div class="content">
+                    <a class="header">Timer Patterns</a>
+                    <div class="description">
+                        <p>Javascript design patterns.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <a class="ui image">
+                    <i class="plus large icon"></i>
+                </a>
+                <div class="content">
+                    <a class="header">AMDs</a>
+                    <div class="description">
+                        <p>Javascript design patterns.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <a class="ui image">
+                    <i class="plus large icon"></i>
+                </a>
+                <div class="content">
+                    <a class="header">Pub Sub</a>
+                    <div class="description">
+                        <p>Javascript design patterns.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script data-main="scripts_cart/main" src="scripts_cart/require.js"></script>
+</html>
