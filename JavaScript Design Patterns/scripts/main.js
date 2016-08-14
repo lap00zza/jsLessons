@@ -31,6 +31,11 @@ require(["jquery", "api/github", "moment", "angular", "semantic"], function (jQu
             frequency: 1000,
             count: -1
         };
+        
+        /*
+        * Extend is used to deep-copy one object 
+        * to the other
+        * */
         args = jQuery.extend(true, opts, args);
         var i = 0,
             that = this,
@@ -68,6 +73,11 @@ require(["jquery", "api/github", "moment", "angular", "semantic"], function (jQu
                 var userNameSelector = jQuery(".githubUserName");
                 // var request = github.profile(userName);
                 // window.console.log(request);
+                
+                /*
+                * When is used when more than one deferred objects are used 
+                * together
+                * */
                 jQuery
                     .when(github.profile(userNameSelector.val()), userNameSelector.blinky({count: 2}))
                     .done(function (args) {
